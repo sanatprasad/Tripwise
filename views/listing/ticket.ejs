@@ -1,0 +1,117 @@
+<% layout("/layout/boilerplate") %>
+
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+            <br>
+            
+            <form action="/listing">
+                <div  id="invoice" style="margin: 3rem; border: 1px solid gray; padding: 2rem;">
+                    <h3>E-Reservation Flight Ticket &nbsp; &nbsp;<i class="fa-solid fa-plane-circle-check"></i></h3>
+            <br>
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="FirstName" class="form-label">First Name</label>
+                            <input type="text" name="FirstName" placeholder="<%=user_data.FirstName%>"
+                                class="form-control" disabled>
+                        </div>
+                        <div class="mb-3 col-md-8">
+                            <label for="LastName" class="form-label">Last Name</label>
+                            <input type="text" name="LastName" placeholder="<%=user_data.LastName%>"
+                                class="form-control" disabled>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <textarea name="address" id="" class="form-control" disabled><%=user_data.address%></textarea>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="City" class="form-label">Leaving from</label>
+                            <input type="text" name="City" placeholder="<%=user_data.City%>" class="form-control"
+                                disabled>
+                        </div>
+                        <div class="mb-3 col-md-8">
+                            <label for="Email" class="form-label">Email id</label>
+                            <input type="email" name="Email" placeholder="<%=user_data.Email%>" class="form-control"
+                                disabled>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="number" name="phone" placeholder="<%=user_data.phone%>" class="form-control"
+                                disabled>
+                        </div>
+                        <div class="mb-3 col-md-8">
+                            <label for="Date" class="form-label">Departure On</label>
+                            <input type="text" name="Date" placeholder="<%=user_data.Date%>" class="form-control"
+                                disabled>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="loc" class="form-label">location</label>
+                            <input type="text" name="loc" placeholder="<%=x.loc%>" class="form-control" disabled>
+                        </div>
+                        <div class="mb-3 col-md-8">
+                            <label for="Country" class="form-label">Country</label>
+                            <input type="text" name="Country" placeholder="<%=x.country%>" class="form-control"
+                                disabled>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">From</th>
+                                    <th scope="col">To</th>
+                                    <th scope="col">Paid Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>
+                                        <%= user_data.FirstName %> &nbsp; <%= user_data.LastName %>
+                                    </td>
+                                    <td>
+                                        <%= user_data.City %>
+                                    </td>
+                                    <td>
+                                        <%= x.loc %> , <%= x.country %>
+                                    </td>
+                                    <th>
+                                        <%= x.price %> <i class="fa-solid fa-indian-rupee-sign"></i>
+                                    </th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                </div>
+                <div class="col-8 offset-5 mb-3">
+                    <button class="btn search-btn search-ip" style="height: 3rem;" onclick="genratePDF()" type="button">Download
+                        Ticket</button>
+                        
+                </div>
+
+            </form>
+            <br><br>
+        </div>
+    </div>
+    <script>
+        function genratePDF() {
+            console.log("Generating PDF...");
+            const element = document.getElementById("invoice");
+            html2pdf()
+                .from(element)
+                .save();
+            console.log("PDF generation started.");
+        }
+
+    </script>

@@ -1,0 +1,93 @@
+<% layout("/layout/boilerplate") %>
+
+    <style>
+        .tag-box {
+            display: flex;
+            /* height: 4rem; */
+            width: 700px;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+
+        .tag-btn {
+            height: 40px !important;
+            margin-left: 1rem !important;
+            margin-top: 0.5rem !important;
+            margin-bottom: 0.5rem !important;
+        }
+    </style>
+
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+            <br>
+            <h3>Creating a New Listing</h3>
+            <br>
+            <form action="/listing" id="NewForm" method="post" class="needs-validation" novalidate
+                enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Enter Title</label>
+                    <input type="text" name="title" placeholder="Enter catchy Title" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea name="description" id="" class="form-control" required></textarea>
+                </div>
+                <div class="row">
+                    <h5>Add tags</h5>
+                        <p style="font-size: 0.8rem;">Please note that once you add tag you can't edit it later</p>
+                    <div class="mb-3 tag-box">
+                        <input type="checkbox" class="btn-check" id="Iconic-Cities" autocomplete="off"
+                            value="Iconic-Cities" name="tags">
+                        <label class="btn btn-outline-primary tag-btn" for="Iconic-Cities">Iconic-Cities</label><br>
+                        <input type="checkbox" class="btn-check" id="Castles" autocomplete="off" name="tags"
+                            value="Castles">
+                        <label class="btn btn-outline-primary tag-btn" for="Castles">Castles</label><br>
+                        <input type="checkbox" class="btn-check" id="Forest" autocomplete="off" name="tags"
+                            value="Forest">
+                        <label class="btn btn-outline-primary tag-btn" for="Forest">Forest</label><br>
+                        <input type="checkbox" class="btn-check" id="Domes" autocomplete="off" name="tags"
+                            value="Domes">
+                        <label class="btn btn-outline-primary tag-btn" for="Domes">Domes</label><br>
+                        <input type="checkbox" class="btn-check" id="Farms" autocomplete="off" name="tags"
+                            value="Farms">
+                        <label class="btn btn-outline-primary tag-btn" for="Farms">Farms</label><br>
+                        <input type="checkbox" class="btn-check" id="Artic" autocomplete="off" name="tags"
+                            value="Artic">
+                        <label class="btn btn-outline-primary tag-btn" for="Artic">Snowy</label><br>
+                        <input type="checkbox" class="btn-check" id="Camping" autocomplete="off" name="tags"
+                            value="Camping">
+                        <label class="btn btn-outline-primary tag-btn" for="Camping">Camping</label><br>
+                        <input type="checkbox" class="btn-check" id="Beach" autocomplete="off" name="tags"
+                            value="Beach">
+                        <label class="btn btn-outline-primary tag-btn" for="Beach">Beach</label><br>
+                        <input type="checkbox" class="btn-check" id="Mountain" autocomplete="off" name="tags"
+                            value="Mountain">
+                        <label class="btn btn-outline-primary tag-btn" for="Mountain">Mountain</label><br>
+                    </div>
+                </div>
+                <br>
+                <div class="mg-3">
+                    <label for="image" class="form-label">Upload Listing Image</label>
+                    <input type="file" name="image" placeholder="Enter Image URL/Link" class="form-control" required>
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="number" name="price" placeholder="1200" class="form-control" required>
+                    </div>
+                    <div class="mb-3 col-md-8">
+                        <label for="country" class="form-label">Country</label>
+                        <input type="text" name="country" placeholder="India" class="form-control" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="loc" class="form-label">Location</label>
+                    <input type="text" name="loc" placeholder="Jaipur, Rajsathan" class="form-control" required>
+                </div><br>
+                <button class="btn btn-dark add-btn">Add</button>
+            </form>
+            <br><br>
+        </div>
+    </div>
+    <!-- <script src="/js/script.js"></script> -->

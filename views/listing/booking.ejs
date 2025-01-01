@@ -1,0 +1,56 @@
+<% layout("/layout/boilerplate") %>
+
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+            <br>
+            <h3>Please provide your details to confirm the booking.</h3>
+            <br>
+            <form action="/listing/<%= id %>/ticket" method="post">
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="FirstName" class="form-label">First Name</label>
+                        <input type="text" name="FirstName" placeholder="Enter Your First Name" class="form-control" required>
+                    </div>
+                    <div class="mb-3 col-md-8">
+                        <label for="LastName" class="form-label">Last Name</label>
+                        <input type="text" name="LastName" placeholder="Enter Your Last Name" class="form-control" required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <textarea name="address" class="form-control" placeholder="Enter Your Address" required></textarea>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="City" class="form-label">City</label>
+                        <input type="text" name="City" placeholder="Enter Your City" class="form-control" required>
+                    </div>
+                    <div class="mb-3 col-md-8">
+                        <label for="Email" class="form-label">Email id</label>
+                        <input type="email" name="Email" placeholder="Enter Your Email id" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="number" name="phone" placeholder="+91 7709394688" class="form-control" required>
+                    </div>
+                    <div class="mb-3 col-md-8">
+                        <label for="Date" class="form-label">Date</label>
+                        <input type="date" name="Date" placeholder="dd-mm-yy" class="form-control" required>
+                    </div>
+                </div>
+                <br>
+                
+                <br>
+                <div class="col-8 offset-5 mb-3">
+                    <button class="btn search-btn search-ip" style="height: 3rem;">Confirm Booking</button>
+                </div>
+                
+            </form>
+            <br><br>
+        </div>
+    </div>
+    <!-- <script src="/js/script.js"></script> -->
